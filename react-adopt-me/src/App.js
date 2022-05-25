@@ -1,34 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { React, render } from "react-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-dom";
+import Details from "./Details";
 import SearchParams from "./SearchParams";
-
-// const App = () => {
-//   return React.createElement("div", {}, [
-//     React.createElement("h1", {}, "Adopt Me!"),
-//     React.createElement(Pet, {
-//       name: "Luna",
-//       animal: "Dog",
-//       breed: "Havanese",
-//     }),
-//     React.createElement(Pet, {
-//       name: "Pepper",
-//       animal: "Dog",
-//       breed: "Cocketiel",
-//     }),
-//     React.createElement(Pet, {
-//       name: "Sudo",
-//       animal: "Dog",
-//       breed: "Wheaten Terrier",
-//     }),
-//   ]);
-// };
 
 const App = () => {
   return (
     <div>
-      <h1>Adopte Me</h1>
-      <SearchParams />
+      <Router>
+        <header>
+          <Link to="/">Adopt Me!</Link>
+        </header>
+        <Switch>
+          <Route path="/details/:id">
+            <Details />
+          </Route>
+          <Route path="/">
+            <SearchParams />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };
-ReactDOM.render(<App />, document.getElementById("root"));
+
+render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
