@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-dom";
+import { Link } from "react-router-dom";
 
 const Pet = (props) => {
   const { name, animal, breed, images, location, id } = props;

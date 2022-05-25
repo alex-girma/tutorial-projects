@@ -1,5 +1,5 @@
 import { React, render } from "react-dom";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Details from "./Details";
 import SearchParams from "./SearchParams";
 
